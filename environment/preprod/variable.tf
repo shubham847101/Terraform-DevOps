@@ -70,3 +70,28 @@ variable "lb-values" {
     frontend_ip_config_name = string
   }))
 }
+
+variable "appgw-values" {
+  type = map(object({
+    appgw-name = string
+    rg-key = string
+    sku-name = string
+    sku-tier = string
+    sku-capacity = number
+    vnet-key = string
+    gw-ip-config-name = string
+    frontend-port = number
+    pip-key = string
+    frontend_ip_config_name = string
+    http-listener-protocol = string
+    routing-rule-type = string
+    cookie-affinity = string
+    path = string
+    backend-http-settings-port = number
+    backend-http-settings-protocol = string
+    backend-http-settings-request-timeout = number
+    request-routing-rule-priority = number
+    request-routing-rule-type = string
+    subnet-key = string
+  }))
+}

@@ -49,3 +49,13 @@ module "loadbalancer" {
   rg-values = var.rg-values
   pip-values = var.pip-values
 }
+
+module "application_gateway" {
+  depends_on = [module.pip,module.resource_group, module.virtual_network, module.subnet]
+  source = "../../modules/application_gateway"
+  rg-values = var.rg-values
+  appgw-values = var.appgw-values
+  pip-values = var.pip-values
+  subnet-values = var.subnet-values
+  vnet-values = var.vnet-values
+}
