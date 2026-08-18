@@ -1,0 +1,14 @@
+title = "Company Rules"
+
+[[rules]]
+id = "hardcoded-password"
+
+description = "Detect hardcoded password"
+
+regex = '''(?i)(password|passwd|pwd)\s*[:=]\s*["'][^"']+["']'''
+
+keywords = [
+  "password",
+  "passwd",
+  "pwd"
+]
