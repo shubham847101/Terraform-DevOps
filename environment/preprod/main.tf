@@ -59,3 +59,11 @@ module "application_gateway" {
   subnet-values = var.subnet-values
   vnet-values = var.vnet-values
 }
+
+module "virtual-machines" {
+  depends_on = [module.resource_group, module.network_interfaces]
+  source = "../../modules/virtual_machine"
+  rg-values = var.rg-values
+  nic-values = var.nic-values
+  shubham-vms = var.shubham-vms
+}
