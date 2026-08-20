@@ -1,0 +1,10 @@
+title = "Terraform Gitleaks Configuration"
+
+[[rules]]
+id = "terraform-hardcoded-password"
+description = "Detect hardcoded Terraform passwords"
+regex = '''(?i)admin_password\s*=\s*"([^"]+)"'''
+secretGroup = 1
+keywords = [
+    "admin_password"
+]

@@ -82,7 +82,7 @@ variable "appgw-values" {
     gw-ip-config-name = string
     frontend-port = number
     pip-key = string
-    frontend_ip_config_name = string
+    # frontend_ip_config_name = string
     http-listener-protocol = string
     routing-rule-type = string
     cookie-affinity = string
@@ -93,5 +93,27 @@ variable "appgw-values" {
     request-routing-rule-priority = number
     request-routing-rule-type = string
     subnet-key = string
+  }))
+}
+
+variable "shubham-vms" {
+  type = map(object({
+    name = string
+    rg-key = string
+    size = string
+    admin_username = string
+    admin_password = string
+  
+    network_interface_ids = list(string)
+
+    disable_password_authentication = bool
+
+    caching = string
+    storage_account_type = string
+
+    publisher = string
+    offer     = string
+    sku       = string
+    version   = string
   }))
 }
