@@ -82,7 +82,7 @@ variable "appgw-values" {
     gw-ip-config-name = string
     frontend-port = number
     pip-key = string
-    frontend_ip_config_name = string
+    # frontend_ip_config_name = string
     http-listener-protocol = string
     routing-rule-type = string
     cookie-affinity = string
@@ -99,8 +99,7 @@ variable "appgw-values" {
 variable "shubham-vms" {
   type = map(object({
     name = string
-    resource_group_name = string
-    location = string
+    rg-key = string
     size = string
     admin_username = string
     admin_password = string

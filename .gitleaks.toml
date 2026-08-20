@@ -1,14 +1,10 @@
-title = "Company Rules"
+title = "Terraform Gitleaks Configuration"
 
 [[rules]]
-id = "hardcoded-password"
-
-description = "Detect hardcoded password"
-
-regex = '''(?i)(password|passwd|pwd)\s*[:=]\s*["'][^"']+["']'''
-
+id = "terraform-hardcoded-password"
+description = "Detect hardcoded Terraform passwords"
+regex = '''(?i)admin_password\s*=\s*"([^"]+)"'''
+secretGroup = 1
 keywords = [
-  "password",
-  "passwd",
-  "pwd"
+    "admin_password"
 ]

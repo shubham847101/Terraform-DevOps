@@ -1,2 +1,2 @@
 variable pip-values {}
-variable "rg-values" {}
+variable rg-values {}
